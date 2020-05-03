@@ -20,16 +20,16 @@ export default function BottomTabNavigator({ navigation, route }) {
         name="Home"
         component={HomeScreen}
         options={{
-          title: 'Get Started',
-          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-code-working" />,
+          title: 'Shop',
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-cart" />,
         }}
       />
       <BottomTab.Screen
         name="Links"
         component={LinksScreen}
         options={{
-          title: 'Resources',
-          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-book" />,
+          title: 'Merchant',
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="ios-business" />,
         }}
       />
     </BottomTab.Navigator>
@@ -41,8 +41,8 @@ function getHeaderTitle(route) {
 
   switch (routeName) {
     case 'Home':
-      return 'How to get started';
+      return 'Shop Now';
     case 'Links':
-      return 'Links to learn more';
+      return 'Merchant';
   }
 }

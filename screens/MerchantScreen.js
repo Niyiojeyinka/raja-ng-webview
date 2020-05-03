@@ -1,26 +1,85 @@
-import { Ionicons } from '@expo/vector-icons';
-import * as WebBrowser from 'expo-web-browser';
 import * as React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { RectButton, ScrollView } from 'react-native-gesture-handler';
+import { Dimensions, StyleSheet, Text, ActivityIndicator, View } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
+import { WebView } from 'react-native-webview';
+const deviceHeight = Dimensions.get('window').height;
+const deviceWidth = Dimensions.get('window').width;
 
-export default function LinksScreen() {
-  return (
-    <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-     <Text>Merchant Here</Text>
-    </ScrollView>
-  );
+
+export default class HomeScreen extends React.Component{
+
+  constructor(props){
+   super(props);
+   this.state={loading:true};
+  }
+
+  showSpinner() {
+    this.setState({ loading: true });
+  }
+  hideSpinner() {
+    this.setState({ loading: false });
+  }
+
+  spinnerView(){
+    return (<ActivityIndicator style={{position: 'absolute',top:0,
+      left:deviceWidth/2}}
+    color="#009688"
+    size="large"/>
+    );
+    
+  }
+
+  errorView(){
+
+    return (
+<view>
+  <Text>Error Occured </Text>
+</view>
+
+    );
+  }
+
+  render(){
+    return(
+
+<View style={styles.container}>
+      <ScrollView style={styles.container}>
+      <WebView style={{flex:1,marginTop:40,width:deviceWidth
+      ,height:deviceHeight*5}}
+  source={{uri: "https://raja.ng/upx/vendor-register/"}}
+  onError={(error)=>{ alert("error");}}
+  //onLoadStart={function(){this.}}
+  javaScriptEnabled={true}
+  domStorageEnabled={true}
+  renderLoading={this.spinnerView}
+  renderError={this.errorView}
+  startInLoadingState={true}
+  scalesPageToFit={true}
+/>
+      </ScrollView>
+
+    </View>
+    );
+  }
+
 }
 
-//<Ionicons name={icon} size={22} color="rgba(0,0,0,0.35)" />
+
+
+
+
+
+
+
+HomeScreen.navigationOptions = {
+  header: null,
+};
 
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fafafa',
-  },
-  contentContainer: {
-    paddingTop: 15,
-  },
+    backgroundColor: '#fff'
+    
+  }
 });

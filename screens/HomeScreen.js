@@ -9,11 +9,11 @@ export default function HomeScreen() {
     <View style={styles.container}>
       <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
         
-  <WebView source={{uri:'https://raja.ng'}}/>
   <Text>Web Should show here</Text>
+
+      <WebView source={{uri:'https://raja.ng'}} />
       </ScrollView>
 
-     
     </View>
   );
 }

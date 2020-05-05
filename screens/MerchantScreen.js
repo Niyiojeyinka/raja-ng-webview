@@ -54,7 +54,7 @@ if (this.state.error ){
       <View style={styles.container}>
             <ScrollView style={styles.container}>
             <WebView style={{flex:1,marginTop:30,width:deviceWidth
-            ,height:deviceHeight*5}}
+            ,height:deviceHeight*6}}
         source={{uri: "https://raja.ng/upx/vendor-register/"}}
         onError={()=>{ this.setState({error:true});}}
         javaScriptEnabled={true}

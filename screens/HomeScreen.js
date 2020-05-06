@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Dimensions, StyleSheet, Text, ActivityIndicator, View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { WebView } from 'react-native-webview';
+import ErrorConnectionView from './ErrorConnectionView';
 const deviceHeight = Dimensions.get('window').height;
 const deviceWidth = Dimensions.get('window').width;
 
@@ -39,12 +40,7 @@ export default class HomeScreen extends React.Component{
 if (this.state.error ){
   this.tryAgain();
   return (
-    <View style={styles.container,{justifyContent:"center",alignItems:
-    "center" ,flexDirection:"column"}}>
-    <Text style={{marginTop:40,fontSize:32}}>Network Error</Text>
-
-    <Text style={{marginTop:20,fontSize:8}}>Will automatically try again in the next few seconds</Text>
-</View>
+   <ErrorConnectionView/>
 
   );
   }else {

@@ -17,7 +17,7 @@ export default class HomeScreen extends React.Component{
 
 
   spinnerView(){
-    return (<ActivityIndicator style={{position: 'absolute',top:0,
+    return (<ActivityIndicator style={{position: 'absolute',top:10,
       left:deviceWidth/2}}
     color="#009688"
     size="large"/>

@@ -30,6 +30,7 @@
     },
     "android" : {
       "package": "ng.raja.raja",
+      "googleServicesFile": "./google-services.json",
       "versionCode": 1
     }
   }

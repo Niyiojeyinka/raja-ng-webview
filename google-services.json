@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1048482573252",
+    "firebase_url": "https://raja-28da4.firebaseio.com",
+    "project_id": "raja-28da4",
+    "storage_bucket": "raja-28da4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1048482573252:android:f29143e4b578d1a5059291",
+        "android_client_info": {
+          "package_name": "ng.raja.raja"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1048482573252-tl67vcnqvhluflvcf41h1553l0q9sn8a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2lS8psn-JTxhZwxA1FBa1zYmC4uT_p-o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1048482573252-tl67vcnqvhluflvcf41h1553l0q9sn8a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

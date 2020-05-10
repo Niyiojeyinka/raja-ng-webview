@@ -50,9 +50,11 @@ if (this.state.error ){
       <View style={styles.container}>
             <ScrollView style={styles.container}>
             <WebView style={{flex:1,marginTop:30,width:deviceWidth
-            ,height:deviceHeight*8}}
+            ,height: deviceHeight*35}}
+        automaticallyAdjustContentInsets={false}
         source={{uri: "https://raja.ng"}}
         onError={()=>{ this.setState({error:true});}}
+        ena
         javaScriptEnabled={true}
         domStorageEnabled={true}
         renderLoading={this.spinnerView}

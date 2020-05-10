@@ -16,6 +16,7 @@ export default function BottomTabNavigator({ navigation, route }) {
 
   return (
     <BottomTab.Navigator initialRouteName={INITIAL_ROUTE_NAME}>
+
       <BottomTab.Screen
         name="Home"
         component={HomeScreen}

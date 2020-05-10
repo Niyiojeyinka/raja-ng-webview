@@ -4,7 +4,7 @@ import { Notifications } from 'expo';
 import * as Permissions from 'expo-permissions';
 import Constants from 'expo-constants';
 
-export default class AppContainer extends React.Component {
+export default class Notification extends React.Component {
   state = {
     expoPushToken: '',
     notification: {},

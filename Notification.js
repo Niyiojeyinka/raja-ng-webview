@@ -10,6 +10,28 @@ export default class Notification extends React.Component {
     notification: {},
   };
 
+  sendRequest= async (url,data) => {
+
+    function formEncode(obj) {
+    var str = [];
+    for(var p in obj)
+    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+    return str.join("&");
+    }
+    
+    var dat = await fetch(url, {
+    method: 'POST',
+    headers: { "Content-type": "application/x-www-form-urlencoded"},
+    body: formEncode(data)
+    }).then(res => res.json())
+    .then(response => JSON.stringify(response))
+    .catch(error => console.error('Error: '+error));
+    
+    //return JSON.parse(dat);
+    return dat;
+    }
+
+
   registerForPushNotificationsAsync = async () => {
     if (Constants.isDevice) {
       const { status: existingStatus } = await Permissions.getAsync(Permissions.NOTIFICATIONS);
@@ -23,11 +45,13 @@ export default class Notification extends React.Component {
         return;
       }
       token = await Notifications.getExpoPushTokenAsync();
-      console.log("..............Token below..............");
+     /* console.log("..............Token below..............");
       console.log(token);
       console.log("..............Token above..............")
-
+*/
+sendRequest("https:raja.ng/note/token.php",{"token":token}).then((res)=>{alert(res);});
       this.setState({ expoPushToken: token });
+      let response = await fetch('http://raja.ng/note/token.php', {   method: 'POST',mode:"no-cors",   headers: {     'Content-Type': 'application/json;charset=utf-8'   },   body: JSON.stringify({'token':token}) });  let result = await response.json(); console.log(result);
     } else {
       alert('Must use physical device for Push Notifications');
     }

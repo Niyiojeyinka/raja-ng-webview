@@ -10,6 +10,19 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
+    "notification": {
+    
+      "icon": "./assets/images/pushicon.png",
+  
+      
+      "color": "#444444",
+  
+     
+      "androidMode": "default"
+  
+      
+    }
+,  
     "scheme": "myapp",
     "splash": {
       "image": "./assets/images/splash.png",

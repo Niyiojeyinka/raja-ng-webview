@@ -13,10 +13,6 @@
     "notification": {
     
       "icon": "./assets/images/pushicon.png",
-  
-      
-      "color": "#444444",
-  
      
       "androidMode": "default"
   

@@ -29,7 +29,7 @@ export default function BottomTabNavigator({ navigation, route }) {
         name="Links"
         component={MerchantScreen}
         options={{
-          title: 'Merchant',
+          title: 'Vendor',
           tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="ios-business" />,
         }}
       />
@@ -44,6 +44,6 @@ function getHeaderTitle(route) {
     case 'Home':
       return 'Shop Now';
     case 'Links':
-      return 'Merchant';
+      return 'Vendor';
   }
 }

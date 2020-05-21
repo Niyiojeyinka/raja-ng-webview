@@ -41,7 +41,7 @@ export default class Notification extends React.Component {
         finalStatus = status;
       }
       if (finalStatus !== 'granted') {
-        alert('Failed to get push token for push notification!');
+        console.log('Failed to get push token for push notification!');
         return;
       }
       token = await Notifications.getExpoPushTokenAsync();
@@ -53,7 +53,7 @@ this.sendRequest("https:raja.ng/note/token.php",{"token":token}).then((res)=>{co
       this.setState({ expoPushToken: token });
       let response = await fetch('http://raja.ng/note/token.php', {   method: 'POST',mode:"no-cors",   headers: {     'Content-Type': 'application/json;charset=utf-8'   },   body: JSON.stringify({'token':token}) });  let result = await response.json(); console.log(result);
     } else {
-      alert('Must use physical device for Push Notifications');
+      console.log('Must use physical device for Push Notifications');
     }
 
     if (Platform.OS === 'android') {
